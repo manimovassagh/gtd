@@ -2,12 +2,12 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "target": "ES2019",
-    "module": "commonjs",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "module": "commonjs", // Required for compatibility with Node.js
+    "target": "es2019",
   }
 }

@@ -11,8 +11,10 @@ export const AppDataSource = new DataSource({
   username: process.env.DATABASE_USER || "postgres",
   password: process.env.DATABASE_PASSWORD || "",
   database: process.env.DATABASE_NAME || "postgres",
-  synchronize: true, // Automatically sync schema; turn off in production
+  synchronize: false, // Use migrations instead of auto-sync
   logging: true,
-  entities: [__dirname + "/entities/*.{js,ts}"], // Point to entities folder
-  migrations: [__dirname + "/migrations/*.{js,ts}"], // Point to migrations folder
+  entities: [__dirname + "/entities/*.{js,ts}"],
+  migrations: [__dirname + "/migrations/*.{js,ts}"],
 });
+
+export default AppDataSource; // Ensure a single default export
