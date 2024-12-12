@@ -4,23 +4,23 @@ import { User } from "./User";
 @Entity()
 export class Task {
   @PrimaryGeneratedColumn()
-  id!: number; // TypeORM will assign this value
+  id!: number;
 
   @Column()
-  title!: string; // TypeORM will assign this value
+  title!: string;
 
-  @Column({ nullable: true })
-  description!: string | null; // Nullable in the database, so can be null
+  @Column({ type: "text", nullable: true }) // Explicitly set type as "text"
+  description!: string | null;
 
   @Column({ type: "enum", enum: ["inbox", "next_action", "waiting_for", "someday_maybe"] })
-  status!: string; // TypeORM will assign this value
+  status!: string;
 
-  @Column({ nullable: true, type: "timestamp" })
-  dueDate!: Date | null; // Nullable in the database, so can be null
+  @Column({ type: "timestamp", nullable: true })
+  dueDate!: Date | null;
 
-  @Column({ nullable: true })
-  contextTags!: string | null; // Nullable in the database, so can be null
+  @Column({ type: "text", nullable: true }) // Store tags as text, JSON if needed
+  contextTags!: string | null;
 
   @ManyToOne(() => User, (user) => user.tasks, { onDelete: "CASCADE" })
-  user!: User; // TypeORM will manage this relationship
+  user!: User;
 }
