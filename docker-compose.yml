@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: gtd-postgres
+    environment:
+      POSTGRES_USER: gtd_user
+      POSTGRES_PASSWORD: gtd_password
+      POSTGRES_DB: gtd_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gtd_user -d gtd_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:

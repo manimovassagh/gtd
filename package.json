@@ -3,20 +3,26 @@
   "version": "1.0.0",
   "description": "This application aims to help you implement the Getting Things Done (GTD) method for personal productivity. By using the core principles of GTD, this task manager will guide you through capturing, clarifying, organizing, reflecting, and engaging with your tasks efficiently.",
   "main": "index.js",
-"scripts": {
-  "build": "tsc",
-  "start": "node dist/index.js",
-  "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts"
-},
+  "scripts": {
+    "predev": "docker compose up -d",
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "ts-node scripts/migrate.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
