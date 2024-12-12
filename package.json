@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "This application aims to help you implement the Getting Things Done (GTD) method for personal productivity. By using the core principles of GTD, this task manager will guide you through capturing, clarifying, organizing, reflecting, and engaging with your tasks efficiently.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
