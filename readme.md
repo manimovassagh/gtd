@@ -2,6 +2,7 @@
 
 This application aims to help you implement the Getting Things Done (GTD) method for personal productivity. By using the core principles of GTD, this task manager will guide you through capturing, clarifying, organizing, reflecting, and engaging with your tasks efficiently.
 
+
 ## Principles of the Application
 
 1. **Capture Everything:**
