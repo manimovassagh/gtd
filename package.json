@@ -4,11 +4,11 @@
   "description": "This application aims to help you implement the Getting Things Done (GTD) method for personal productivity. By using the core principles of GTD, this task manager will guide you through capturing, clarifying, organizing, reflecting, and engaging with your tasks efficiently.",
   "main": "index.js",
   "scripts": {
+    "predev": "docker compose up -d",
     "typeorm": "typeorm-ts-node-esm",
     "migration:generate": "typeorm migration:generate ./src/migrations",
     "migration:run": "typeorm migration:run",
     "migration:revert": "typeorm migration:revert",
-    "predev": "docker compose up -d",
     "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
