@@ -1,5 +1,5 @@
 import express from 'express';
-import { testDBConnection } from './db';
+import { testDBConnection } from './db/db';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,7 +13,7 @@ async function startServer() {
   // Test the database connection before starting the server
   await testDBConnection();
 
-  app.get('/', (req, res) => {
+  app.get('/', (_req, res) => {
     res.send({
       name: 'GTD Task Manager Backend',
     });
