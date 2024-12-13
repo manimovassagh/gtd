@@ -14,7 +14,9 @@ async function startServer() {
   await testDBConnection();
 
   app.get('/', (req, res) => {
-    res.send('Hello from GTD Task Manager Backend with Postgres!');
+    res.send({
+      name: 'GTD Task Manager Backend',
+    });
   });
 
   app.listen(PORT, () => {
